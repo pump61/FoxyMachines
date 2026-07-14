@@ -19,13 +19,13 @@ public final class ChunkLoaderLimitCommand extends SubCommand {
     private static final NamespacedKey KEY = new NamespacedKey(FoxyMachines.getInstance(), "chunkloaders");
 
     public ChunkLoaderLimitCommand() {
-        super("cllimit", "设置指定玩家当前的区块加载器已放置数量", "foxymachines.admin");
+        super("cllimit", "Define a quantidade atual de carregadores de chunk colocados por um jogador", "foxymachines.admin");
     }
 
     @Override
     protected void execute(@Nonnull CommandSender commandSender, @Nonnull String[] args) {
         if (args.length < 1 || args.length > 2) {
-            commandSender.sendMessage(ChatColor.LIGHT_PURPLE + "使用方法：/foxy cllimit [player] <amount>");
+            commandSender.sendMessage(ChatColor.LIGHT_PURPLE + "Uso: /foxy cllimit [player] <amount>");
             return;
         }
 
@@ -35,12 +35,12 @@ public final class ChunkLoaderLimitCommand extends SubCommand {
             try {
                 limit = Integer.parseInt(args[0]);
             } catch (NumberFormatException e) {
-                commandSender.sendMessage(ChatColor.LIGHT_PURPLE + "无效的数量！");
+                commandSender.sendMessage(ChatColor.LIGHT_PURPLE + "Quantidade inválida!");
                 return;
             }
 
             if (!(commandSender instanceof Player)) {
-                commandSender.sendMessage(ChatColor.LIGHT_PURPLE + "使用控制台执行该指令时，必须指定玩家！");
+                commandSender.sendMessage(ChatColor.LIGHT_PURPLE + "É necessário especificar um jogador ao executar pelo console!");
                 return;
             }
 
@@ -49,30 +49,30 @@ public final class ChunkLoaderLimitCommand extends SubCommand {
             try {
                 limit = Integer.parseInt(args[1]);
             } catch (NumberFormatException e) {
-                commandSender.sendMessage(ChatColor.LIGHT_PURPLE + "无效的数量！");
+                commandSender.sendMessage(ChatColor.LIGHT_PURPLE + "Quantidade inválida!");
                 return;
             }
             p = FoxyMachines.getInstance().getServer().getPlayer(args[0]);
             if (p == null) {
-                commandSender.sendMessage(ChatColor.LIGHT_PURPLE + "玩家不在线！");
+                commandSender.sendMessage(ChatColor.LIGHT_PURPLE + "O jogador não está online!");
                 return;
             }
         }
 
         if (limit < 0) {
-            commandSender.sendMessage(ChatColor.LIGHT_PURPLE + "数量不能小于0！");
+            commandSender.sendMessage(ChatColor.LIGHT_PURPLE + "A quantidade não pode ser menor que 0!");
             return;
         }
 
         Config cfg = new Config(FoxyMachines.getInstance());
         int max = cfg.getInt("max-chunk-loaders");
         if (max != 0 && limit > max) {
-            commandSender.sendMessage(ChatColor.LIGHT_PURPLE + "数量不能大于上限（" + max + "）！");
+            commandSender.sendMessage(ChatColor.LIGHT_PURPLE + "A quantidade não pode ser maior que o limite (" + max + ")!");
             return;
         }
 
         PersistentDataAPI.setInt(p, KEY, limit);
-        commandSender.sendMessage(ChatColor.LIGHT_PURPLE + "已修改玩家 " + p.getName() + " 的区块加载器已放置数量为 " + limit);
+        commandSender.sendMessage(ChatColor.LIGHT_PURPLE + "Quantidade de carregadores de chunk colocados do jogador " + p.getName() + " alterada para " + limit);
     }
 
 

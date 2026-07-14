@@ -59,7 +59,7 @@ public class PotionMixer extends SlimefunItem implements EnergyNetComponent {
         });
 
 
-        new BlockMenuPreset(getId(), "&6药水混合器") {
+        new BlockMenuPreset(getId(), "&6Misturador de Poções") {
 
             @Override
             public void init() {
@@ -392,17 +392,17 @@ public class PotionMixer extends SlimefunItem implements EnergyNetComponent {
                 }
 
                 List<String> lore = new ArrayList<>() {{
-                    add("无法在酿造台中使用");
+                    add("Não pode ser usado no suporte de fabricação de poções");
                 }};
                 potionMeta.setBasePotionData(new PotionData(PotionType.UNCRAFTABLE, false, false));
                 switch (potion1.getType()) {
-                    case POTION -> potionMeta.setDisplayName(ChatColor.AQUA + "混合药水");
+                    case POTION -> potionMeta.setDisplayName(ChatColor.AQUA + "Poção Mista");
                     case LINGERING_POTION -> {
-                        lore.add(ChatColor.RED + "由于Minecraft的bug导致持续时间显示有问题");
-                        lore.add(ChatColor.RED + "将持续时间乘以4来计算实际持续时间");
-                        potionMeta.setDisplayName(ChatColor.AQUA + "混合滞留型药水");
+                        lore.add(ChatColor.RED + "Devido a um bug do Minecraft, a duração exibida está incorreta");
+                        lore.add(ChatColor.RED + "Multiplique a duração exibida por 4 para saber a duração real");
+                        potionMeta.setDisplayName(ChatColor.AQUA + "Poção Residual Mista");
                     }
-                    case SPLASH_POTION -> potionMeta.setDisplayName(ChatColor.AQUA + "混合喷溅型药水");
+                    case SPLASH_POTION -> potionMeta.setDisplayName(ChatColor.AQUA + "Poção Arremessável Mista");
                 }
                 potionMeta.setLore(lore);
                 potionMeta.setColor(Color.AQUA);

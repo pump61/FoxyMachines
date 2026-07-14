@@ -59,7 +59,7 @@ public class ElectricGoldRefinery extends SlimefunItem implements EnergyNetCompo
         });
 
 
-        new BlockMenuPreset(getId(), "&6电力炼金厂") {
+        new BlockMenuPreset(getId(), "&6Refinaria Elétrica de Ouro") {
 
             @Override
             public void init() {
@@ -80,21 +80,21 @@ public class ElectricGoldRefinery extends SlimefunItem implements EnergyNetCompo
                 if (!StorageCacheUtils.hasBlock(b.getLocation()) ||
                         StorageCacheUtils.getData(b.getLocation(), "gold_recipe") == null ||
                         StorageCacheUtils.getData(b.getLocation(), "gold_recipe").equals("11")) {
-                    menu.replaceExistingItem(32, new CustomItemStack(Material.RED_STAINED_GLASS_PANE, "&6当前配方: &c无", "", "&e> 点击左侧物品更改配方"));
+                    menu.replaceExistingItem(32, new CustomItemStack(Material.RED_STAINED_GLASS_PANE, "&6Receita atual: &cNenhuma", "", "&e> Clique no item à esquerda para mudar a receita"));
                 } else {
                     switch (StorageCacheUtils.getData(b.getLocation(), "gold_recipe")) {
-                        case "0" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6当前配方: &f金锭 &7(4 克拉)", "", "&e> 点击左侧物品更改配方"));
-                        case "1" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6当前配方: &f金锭 &7(6 克拉)", "", "&e> 点击左侧物品更改配方"));
-                        case "2" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6当前配方: &f金锭 &7(8 克拉)", "", "&e> 点击左侧物品更改配方"));
-                        case "3" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6当前配方: &f金锭 &7(10 克拉)", "", "&e> 点击左侧物品更改配方"));
-                        case "4" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6当前配方: &f金锭 &7(12 克拉)", "", "&e> 点击左侧物品更改配方"));
-                        case "5" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6当前配方: &f金锭 &7(14 克拉)", "", "&e> 点击左侧物品更改配方"));
-                        case "6" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6当前配方: &f金锭 &7(16 克拉)", "", "&e> 点击左侧物品更改配方"));
-                        case "7" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6当前配方: &f金锭 &7(18 克拉)", "", "&e> 点击左侧物品更改配方"));
-                        case "8" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6当前配方: &f金锭 &7(20 克拉)", "", "&e> 点击左侧物品更改配方"));
-                        case "9" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6当前配方: &f金锭 &7(22 克拉)", "", "&e> 点击左侧物品更改配方"));
-                        case "10" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6当前配方: &f金锭 &7(24 克拉)", "", "&e> 点击左侧物品更改配方"));
-                        case "11" -> menu.replaceExistingItem(32, new CustomItemStack(Material.RED_STAINED_GLASS_PANE, "&6当前配方: &c无", "", "&e> 点击左侧物品更改配方"));
+                        case "0" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6Receita atual: &fLingote de Ouro &7(4 quilates)", "", "&e> Clique no item à esquerda para mudar a receita"));
+                        case "1" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6Receita atual: &fLingote de Ouro &7(6 quilates)", "", "&e> Clique no item à esquerda para mudar a receita"));
+                        case "2" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6Receita atual: &fLingote de Ouro &7(8 quilates)", "", "&e> Clique no item à esquerda para mudar a receita"));
+                        case "3" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6Receita atual: &fLingote de Ouro &7(10 quilates)", "", "&e> Clique no item à esquerda para mudar a receita"));
+                        case "4" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6Receita atual: &fLingote de Ouro &7(12 quilates)", "", "&e> Clique no item à esquerda para mudar a receita"));
+                        case "5" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6Receita atual: &fLingote de Ouro &7(14 quilates)", "", "&e> Clique no item à esquerda para mudar a receita"));
+                        case "6" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6Receita atual: &fLingote de Ouro &7(16 quilates)", "", "&e> Clique no item à esquerda para mudar a receita"));
+                        case "7" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6Receita atual: &fLingote de Ouro &7(18 quilates)", "", "&e> Clique no item à esquerda para mudar a receita"));
+                        case "8" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6Receita atual: &fLingote de Ouro &7(20 quilates)", "", "&e> Clique no item à esquerda para mudar a receita"));
+                        case "9" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6Receita atual: &fLingote de Ouro &7(22 quilates)", "", "&e> Clique no item à esquerda para mudar a receita"));
+                        case "10" -> menu.replaceExistingItem(32, new CustomItemStack(Material.GOLD_INGOT, "&6Receita atual: &fLingote de Ouro &7(24 quilates)", "", "&e> Clique no item à esquerda para mudar a receita"));
+                        case "11" -> menu.replaceExistingItem(32, new CustomItemStack(Material.RED_STAINED_GLASS_PANE, "&6Receita atual: &cNenhuma", "", "&e> Clique no item à esquerda para mudar a receita"));
                     }
                 }
             }
@@ -322,7 +322,7 @@ public class ElectricGoldRefinery extends SlimefunItem implements EnergyNetCompo
         }
 
         preset.addItem(23, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
-        preset.addItem(46, new CustomItemStack(Material.RED_STAINED_GLASS_PANE, "&c无"), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(46, new CustomItemStack(Material.RED_STAINED_GLASS_PANE, "&cNenhuma"), ChestMenuUtils.getEmptyClickHandler());
 
         NamespacedKey key = new NamespacedKey(FoxyMachines.getInstance(), "nonstackable");
 

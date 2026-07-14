@@ -1,45 +1,45 @@
-# 是否启用自动更新
+# Ativar atualização automática
 auto-update: true
 
-# 每位玩家可以摆放的区块加载器上限
-# 设置为0时无限制
+# Limite de carregadores de chunk que cada jogador pode colocar
+# Defina como 0 para não ter limite
 max-chunk-loaders: 8
 
-# 每个区块加载器所需的GPS网络复杂度
+# Complexidade de rede GPS necessária para cada carregador de chunk
 gps-complexity-per-loader: 7500
 
-# 是否启用幽灵方块
+# Ativar os blocos fantasmas
 ghost-blocks: true
 
-# 是否启用神秘科技中的怪物
-# 禁用后部分物品的配方会改变，部分物品会被移除
+# Ativar os monstros do FoxyMachines
+# Ao desativar, a receita de alguns itens muda e outros itens são removidos
 custom-mobs: true
 
-# 填充棒每次可填充的最大方块数量
+# Quantidade máxima de blocos que a varinha de preenchimento pode preencher de uma vez
 max-fill-wand-blocks: 4096
 
-## 填充棒白名单与黑名单详细说明
-# 名单中填写的是材料（Material）或标签（Tag）
-# 你可以在此找到所有物品的材料（Material）：
+## Detalhes da lista branca e da lista negra da varinha de preenchimento
+# As listas contêm materiais (Material) ou tags (Tag)
+# Você pode encontrar todos os materiais (Material) dos itens aqui:
 #   - https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
-# 在此找到原版的标签（Tag）或者粘液标签（SlimefunTag）：
+# E as tags (Tag) vanilla ou tags do Slimefun (SlimefunTag) aqui:
 #   - https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Tag.html
 #   - https://slimefun.github.io/javadocs/Slimefun4/docs/io/github/thebusybiscuit/slimefun4/utils/tags/SlimefunTag.html
-# 如果材料名与标签名重合，则仅材料名生效
+# Se o nome do material coincidir com o nome de uma tag, apenas o material é considerado
 #
-# 填充棒将会直接允许任何白名单中的材料（优先级最高）
-# 当材料不在白名单中时，则会判断以下条件：
-# - 材料为方块
-# - 材料完全遮光
-# - 材料不处于黑名单中
-# 当以上的条件完全满足时，则允许该材料的使用
+# A varinha de preenchimento sempre permitirá qualquer material da lista branca (prioridade máxima)
+# Quando o material não estiver na lista branca, as seguintes condições são verificadas:
+# - O material é um bloco
+# - O material bloqueia totalmente a luz
+# - O material não está na lista negra
+# Quando todas essas condições forem atendidas, o uso do material é permitido
 
-# 填充棒白名单
+# Lista branca da varinha de preenchimento
 fill-wand-white-list:
   - LEAVES
   - GLASS_BLOCKS
 
-# 填充棒黑名单
+# Lista negra da varinha de preenchimento
 fill-wand-black-list:
   - BARRIER
   - SPAWNER
@@ -47,11 +47,11 @@ fill-wand-black-list:
   - STRUCTURE_BLOCK
   - JIGSAW
 
-# 海绵棒每次可清除的方块数量
+# Quantidade de blocos que a varinha de esponja pode remover de uma vez
 max-sponge-wand-blocks: 16384
 
-# 任务所需的生物，将从本列表中随机选择
-# 需要有效的EntityType作为值
+# Criaturas usadas nas missões, escolhidas aleatoriamente desta lista
+# Deve ser um EntityType válido
 # https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/EntityType.html
 quest-mobs:
   - BAT
@@ -107,8 +107,8 @@ quest-mobs:
   - ZOMBIFIED_PIGLIN
   - FOX
 
-# 不可破坏符文黑名单
-# 你可以禁止不可破坏符文对某些附属中的部分物品生效
+# Lista negra da Runa Inquebrável
+# Você pode impedir que a Runa Inquebrável funcione em itens específicos de outros addons
 unbreakable-rune-blacklist:
   InfinityExpansion:
     - BASIC_STRAINER

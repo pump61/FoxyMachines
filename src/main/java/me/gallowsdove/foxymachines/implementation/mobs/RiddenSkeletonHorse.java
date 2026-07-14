@@ -21,7 +21,7 @@ public class RiddenSkeletonHorse extends CustomMob {
     private static final Set<DamageCause> RESISTANCES = Set.of(DamageCause.CRAMMING, DamageCause.POISON, DamageCause.BLOCK_EXPLOSION, DamageCause.ENTITY_EXPLOSION);
 
     public RiddenSkeletonHorse() {
-        super("SKELETON_HORSE", "骷髅马", EntityType.SKELETON_HORSE, 132);
+        super("SKELETON_HORSE", "Cavalo Esqueleto", EntityType.SKELETON_HORSE, 132);
     }
 
     @Override

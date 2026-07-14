@@ -53,8 +53,8 @@ public class FoxyMachines extends AbstractAddon {
         instance = this;
 
         if (!getServer().getPluginManager().isPluginEnabled("GuizhanLibPlugin")) {
-            getLogger().log(Level.SEVERE, "本插件需要 鬼斩前置库插件(GuizhanLibPlugin) 才能运行!");
-            getLogger().log(Level.SEVERE, "从此处下载: https://50L.cc/gzlib");
+            getLogger().log(Level.SEVERE, "Este addon requer o plugin de biblioteca GuizhanLibPlugin para funcionar!");
+            getLogger().log(Level.SEVERE, "Baixe aqui: https://50L.cc/gzlib");
             getServer().getPluginManager().disablePlugin(this);
             return;
         }

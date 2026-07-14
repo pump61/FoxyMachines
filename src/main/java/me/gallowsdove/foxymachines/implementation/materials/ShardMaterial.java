@@ -31,8 +31,8 @@ public class ShardMaterial extends SimpleSlimefunItem<ItemDropHandler> {
 
             Slimefun.runSync(() -> {
                 if (!QuestUtils.hasActiveQuest(p)) {
-                    p.sendMessage(this.color + "你应该先使用 " + ChatColor.LIGHT_PURPLE + "/foxy quest " + this.color +
-                        "查看你的任务！");
+                    p.sendMessage(this.color + "Você deve primeiro usar " + ChatColor.LIGHT_PURPLE + "/foxy quest " + this.color +
+                        "para ver sua missão!");
                     return;
                 }
 
@@ -40,7 +40,7 @@ public class ShardMaterial extends SimpleSlimefunItem<ItemDropHandler> {
                     return;
                 }
 
-                p.sendMessage(this.color + "已重置任务!");
+                p.sendMessage(this.color + "Missão reiniciada!");
                 QuestUtils.resetQuestLine(p);
                 SacrificialAltarListener.particleAnimation(item.getLocation());
 

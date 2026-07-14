@@ -66,7 +66,7 @@ public abstract class AbstractWand extends SlimefunItem implements NotPlaceable,
             Tag<Material> tag = Bukkit.getTag(Tag.REGISTRY_BLOCKS, NamespacedKey.minecraft(value.toLowerCase()), Material.class);
             SlimefunTag slimefunTag = SlimefunTag.getTag(value);
             if (tag == null && slimefunTag == null) {
-                FoxyMachines.log(Level.WARNING, "无效的配置值 \"" + name + "\": " + value);
+                FoxyMachines.log(Level.WARNING, "Valor de configuração inválido \"" + name + "\": " + value);
                 continue;
             }
 
@@ -97,15 +97,15 @@ public abstract class AbstractWand extends SlimefunItem implements NotPlaceable,
                 String humanizedName = MaterialHelper.getName(material);
                 if ((material.isBlock() && material.isSolid() && material.isOccluding() && !BLACKLIST.contains(material)) ||
                         WHITELIST.contains(material)) {
-                    player.sendMessage(ChatColor.LIGHT_PURPLE + "已设置材料为：" + humanizedName);
+                    player.sendMessage(ChatColor.LIGHT_PURPLE + "Material definido como: " + humanizedName);
                     container.set(AbstractWand.MATERIAL_KEY, PersistentDataType.STRING, material.toString());
                     List<String> lore = this.getItem().getItemMeta().getLore();
-                    lore.set(lore.size() - 2, ChatColor.GRAY + "材料：" + ChatColor.YELLOW + humanizedName);
+                    lore.set(lore.size() - 2, ChatColor.GRAY + "Material: " + ChatColor.YELLOW + humanizedName);
                     meta.setLore(lore);
                     itemInInventory.setItemMeta(meta);
                     setItemCharge(itemInInventory, getItemCharge(itemInInventory)); // To update it in lore
                 } else {
-                    player.sendMessage(ChatColor.RED + "无法设置 " + humanizedName + " 为材料！");
+                    player.sendMessage(ChatColor.RED + "Não foi possível definir " + humanizedName + " como material!");
                 }
             } else {
                 if (isRemoving() && !container.has(MATERIAL_KEY, PersistentDataType.STRING)) {
@@ -120,7 +120,7 @@ public abstract class AbstractWand extends SlimefunItem implements NotPlaceable,
 
                 Inventory inventory = player.getInventory();
                 if (!container.has(MATERIAL_KEY, PersistentDataType.STRING)) {
-                    player.sendMessage(ChatColor.RED + "使用 Shift + 右键点击 先选择材料!");
+                    player.sendMessage(ChatColor.RED + "Use Shift + Clique direito para selecionar um material primeiro!");
                     return;
                 }
                 Material material = Material.getMaterial(container.get(MATERIAL_KEY, PersistentDataType.STRING));
@@ -139,12 +139,12 @@ public abstract class AbstractWand extends SlimefunItem implements NotPlaceable,
                             });
                         }
                     } else {
-                        player.sendMessage(ChatColor.RED + "物品充能不足!");
-                        player.sendMessage(ChatColor.RED + "需要: " + getCostPerBlock() * locs.size());
+                        player.sendMessage(ChatColor.RED + "Carga insuficiente no item!");
+                        player.sendMessage(ChatColor.RED + "Necessário: " + getCostPerBlock() * locs.size());
                     }
                 } else {
-                    player.sendMessage(ChatColor.RED + "你的物品栏中没有足够的物品!");
-                    player.sendMessage(ChatColor.RED + "当前拥有: " + Utils.countItemInInventory(inventory, blocks) + " 需要: " + locs.size());
+                    player.sendMessage(ChatColor.RED + "Você não tem itens suficientes no inventário!");
+                    player.sendMessage(ChatColor.RED + "Você tem: " + Utils.countItemInInventory(inventory, blocks) + " Necessário: " + locs.size());
                 }
             }
         };
@@ -157,7 +157,7 @@ public abstract class AbstractWand extends SlimefunItem implements NotPlaceable,
         SimpleLocation loc2 = SimpleLocation.fromPersistentStorage(container, "secondary_position");
 
         if (loc1 == null || loc2 == null || !loc1.getWorldUUID().equals(loc2.getWorldUUID())) {
-            player.sendMessage(ChatColor.RED + "请先使用位置选择器选择位置！");
+            player.sendMessage(ChatColor.RED + "Use primeiro o Seletor de Posição para escolher os pontos!");
             return locs;
         }
 
@@ -180,14 +180,14 @@ public abstract class AbstractWand extends SlimefunItem implements NotPlaceable,
         }
 
         if ((loc1.getX() - loc2.getX()) * (loc1.getY() - loc2.getY()) * (loc1.getZ() - loc2.getZ()) > getMaxBlocks()) {
-            player.sendMessage(ChatColor.RED + "所选区域过大！");
+            player.sendMessage(ChatColor.RED + "A área selecionada é grande demais!");
             return locs;
         }
 
         World world = Bukkit.getWorld(UUID.fromString(loc1.getWorldUUID()));
 
         if (world == null) {
-            player.sendMessage(ChatColor.RED + "请先使用位置选择器选择位置！");
+            player.sendMessage(ChatColor.RED + "Use primeiro o Seletor de Posição para escolher os pontos!");
             return locs;
         }
 
@@ -203,7 +203,7 @@ public abstract class AbstractWand extends SlimefunItem implements NotPlaceable,
         }
 
         if (locs.isEmpty()) {
-            player.sendMessage(ChatColor.RED + "选择区域无效！");
+            player.sendMessage(ChatColor.RED + "Seleção de área inválida!");
         }
 
         return locs;

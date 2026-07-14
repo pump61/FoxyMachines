@@ -23,63 +23,63 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public final class Items{
 
-    // Item groups
+    // Grupos de itens
     public static final NestedItemGroup MAIN_ITEM_GROUP = new NestedItemGroup(
             new NamespacedKey(FoxyMachines.getInstance(), "foxy_machines"),
-            new CustomItemStack(Material.SHEARS, "&4神秘科技")
+            new CustomItemStack(Material.SHEARS, "&4Tecnologia Arcana")
     );
 
     public static final SubItemGroup MATERIALS_ITEM_GROUP = new SubItemGroup(
             new NamespacedKey(FoxyMachines.getInstance(), "materials"),
             MAIN_ITEM_GROUP,
-            new CustomItemStack(Material.GOLD_INGOT, "&b材料")
+            new CustomItemStack(Material.GOLD_INGOT, "&bMateriais")
     );
 
     public static final SubItemGroup MACHINES_ITEM_GROUP = new SubItemGroup(
             new NamespacedKey(FoxyMachines.getInstance(), "machines"),
             MAIN_ITEM_GROUP,
-            new CustomItemStack(Material.BEACON, "&a机器")
+            new CustomItemStack(Material.BEACON, "&aMáquinas")
     );
 
     public static final SubItemGroup TOOLS_ITEM_GROUP = new SubItemGroup(
             new NamespacedKey(FoxyMachines.getInstance(), "tools"),
             MAIN_ITEM_GROUP,
-            new CustomItemStack(Material.BLAZE_ROD, "&e工具")
+            new CustomItemStack(Material.BLAZE_ROD, "&eFerramentas")
     );
 
     public static final SubItemGroup WEAPONS_AND_ARMORS_ITEM_GROUP = new SubItemGroup(
             new NamespacedKey(FoxyMachines.getInstance(), "weapons_and_armors"),
             MAIN_ITEM_GROUP,
-            new CustomItemStack(Material.NETHERITE_SWORD, "&a武器与护甲")
+            new CustomItemStack(Material.NETHERITE_SWORD, "&aArmas e Armaduras")
     );
 
     public static final SubItemGroup ALTAR_ITEM_GROUP = new SubItemGroup(
         new NamespacedKey(FoxyMachines.getInstance(), "sacrificial_altars"),
         MAIN_ITEM_GROUP,
-        new CustomItemStack(Material.POLISHED_BLACKSTONE_BRICKS, "&4献祭祭坛")
+        new CustomItemStack(Material.POLISHED_BLACKSTONE_BRICKS, "&4Altar de Sacrifício")
     );
 
     public static final SubItemGroup BOSSES_ITEM_GROUP = new SubItemGroup(
         new NamespacedKey(FoxyMachines.getInstance(), "bosses"),
         MAIN_ITEM_GROUP,
-        new CustomItemStack(Material.DRAGON_HEAD, "&cBoss")
+        new CustomItemStack(Material.DRAGON_HEAD, "&cChefes")
     );
 
     public static final SubItemGroup GHOST_BLOCKS_ITEM_GROUP = new SubItemGroup(
             new NamespacedKey(FoxyMachines.getInstance(), "ghost_blocks"),
             MAIN_ITEM_GROUP,
-            new CustomItemStack(Material.GLASS, "&5幽灵方块")
+            new CustomItemStack(Material.GLASS, "&5Blocos Fantasmas")
     );
 
-    // Items
+    // Itens
     public static final SlimefunItemStack ELECTRIC_WIND_STAFF = new SlimefunItemStack(
             "ELECTRIC_WIND_STAFF",
             Material.BLAZE_ROD,
-            "&6电力元素法杖 &7- &b&l风",
+            "&6Cajado Elemental Elétrico &7- &b&lVento",
             "",
-            "&7乘风飞行",
+            "&7Voe com o vento",
             "",
-            "&c&o&8\u21E8 &e\u26A1 &70 / 100 J"
+            "&c&o&8⇨ &e⚡ &70 / 100 J"
     );
 
     static {
@@ -92,11 +92,11 @@ public final class Items{
     public static final SlimefunItemStack ELECTRIC_FIRE_STAFF = new SlimefunItemStack(
             "ELECTRIC_FIRE_STAFF",
             Material.BLAZE_ROD,
-            "&6电力元素法杖 &7- &4&l火",
+            "&6Cajado Elemental Elétrico &7- &4&lFogo",
             "",
-            "&c让火焰净化一切!",
+            "&cDeixe o fogo purificar tudo!",
             "",
-            "&c&o&8\u21E8 &e\u26A1 &70 / 100 J"
+            "&c&o&8⇨ &e⚡ &70 / 100 J"
     );
     static {
         ELECTRIC_FIRE_STAFF.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
@@ -108,11 +108,11 @@ public final class Items{
     public static final SlimefunItemStack ELECTRIC_FIRE_STAFF_II = new SlimefunItemStack(
             "ELECTRIC_FIRE_STAFF_II",
             Material.BLAZE_ROD,
-            "&6电力元素法杖 &7- &4&l火 &7- &eII",
+            "&6Cajado Elemental Elétrico &7- &4&lFogo &7- &eII",
             "",
-            "&7火, 火, 更多的火!",
+            "&7Fogo, fogo, mais fogo!",
             "",
-            "&c&o&8\u21E8 &e\u26A1 &70 / 200 J"
+            "&c&o&8⇨ &e⚡ &70 / 200 J"
     );
     static {
         ELECTRIC_FIRE_STAFF_II.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
@@ -124,29 +124,33 @@ public final class Items{
     public static final SlimefunItemStack HEALING_BOW = new SlimefunItemStack(
             "HEALING_BOW",
             Material.BOW,
-            "&4治愈之弓",
-            "&c治疗 II",
+            "&4Arco da Cura",
+            "&cCura II",
             "",
-            "&8终于有辅助型武器了."
+            "&8Finalmente uma arma de suporte.",
+            "",
+            "&f𳭚"
     );
 
     public static final SlimefunItemStack REINFORCED_STRING = new SlimefunItemStack(
             "REINFORCED_STRING",
             Material.STRING,
-            "&b强化线"
+            "&bLinha Reforçada",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack IMPROVEMENT_FORGE = new SlimefunItemStack(
             "IMPROVEMENT_FORGE",
             Material.SMITHING_TABLE,
-            "&b改进锻造台",
+            "&bForja de Aprimoramento",
             "",
-            "&7用于提升粘液科技工具、武器以及护甲",
-            "&7的品质",
-            "&7需要&a改进核心",
+            "&7Usada para aprimorar ferramentas, armas",
+            "&7e armaduras do Slimefun",
+            "&7Requer um &aNúcleo de Aprimoramento",
             "",
-            "&7工具: 木 > 石 > 铁 > 金 > 钻石 > 下界合金",
-            "&7防具: 皮革 > 锁链 > 铁 > 金 > 钻石 > 下界合金",
+            "&7Ferramentas: Madeira > Pedra > Ferro > Ouro > Diamante > Netherite",
+            "&7Armaduras: Couro > Cota de Malha > Ferro > Ouro > Diamante > Netherite",
             "",
             LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
             LoreBuilder.powerPerSecond(ImprovementForge.ENERGY_CONSUMPTION)
@@ -155,19 +159,21 @@ public final class Items{
     public static final SlimefunItemStack IMPROVEMENT_CORE = new SlimefunItemStack(
             "IMPROVEMENT_CORE",
             "faff2eb498e5c6a04484f0c9f785b448479ab213df95ec91176a308a12add70",
-            "&a改进核心",
+            "&aNúcleo de Aprimoramento",
             "",
-            "&7在&b改进锻造台&7中",
-            "&7与粘液科技装备一起使用",
-            "&7可以提升该装备的品质"
+            "&7Usado na &bForja de Aprimoramento",
+            "&7junto com equipamentos do Slimefun",
+            "&7para aumentar a qualidade do equipamento",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack POTION_MIXER = new SlimefunItemStack(
             "POTION_MIXER",
             Material.BREWING_STAND,
-            "&b药水混合器",
+            "&bMisturador de Poções",
             "",
-            "&7用于混合药水",
+            "&7Usado para misturar poções",
             "",
             LoreBuilder.machine(MachineTier.GOOD, MachineType.MACHINE),
             LoreBuilder.powerPerSecond(PotionMixer.ENERGY_CONSUMPTION)
@@ -176,9 +182,9 @@ public final class Items{
     public static final SlimefunItemStack ELECTRIC_GOLD_REFINERY = new SlimefunItemStack(
             "ELECTRIC_GOLD_REFINERY",
             Material.GOLD_BLOCK	,
-            "&b电力炼金厂",
+            "&bRefinaria Elétrica de Ouro",
             "",
-            "&7将金粉冶炼成指定克拉的金锭",
+            "&7Refina pó de ouro em lingotes de quilate específico",
             "",
             LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
             LoreBuilder.powerPerSecond(ElectricGoldRefinery.ENERGY_CONSUMPTION)
@@ -187,70 +193,83 @@ public final class Items{
     public static final SlimefunItemStack CHUNK_LOADER = new SlimefunItemStack(
             "CHUNK_LOADER",
             Material.BEACON,
-            "&b区块加载器",
+            "&bCarregador de Chunk",
             "",
-            "&7保持其所在区块持续加载",
+            "&7Mantém o chunk onde está sempre carregado",
             "",
-            "&7每个区块加载器需要:",
-            "&77500 GPS网络复杂度"
+            "&7Cada carregador de chunk requer:",
+            "&77500 de complexidade de rede GPS"
     );
 
     public static final SlimefunItemStack STABILIZED_BLISTERING_BLOCK = new SlimefunItemStack(
             "STABILIZED_BLISTERING_BLOCK",
             Material.SNOW_BLOCK,
-            "&b稳定起泡砖",
+            "&bBloco de Bolhas Estabilizado",
             "",
-            "&7一种稳定的材料"
+            "&7Um material estável",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack BOOSTED_RAIL = new SlimefunItemStack(
             "BOOSTED_RAIL",
             Material.RAIL,
-            "&f提速铁轨",
+            "&fTrilho Acelerado",
             "",
-            "&7支持2.5倍速度"
+            "&7Suporta velocidade 2,5x maior",
+            "",
+            "&f𳭚"
     );
 
     public static final SlimefunItemStack BOOSTED_ACTIVATOR_RAIL = new SlimefunItemStack(
             "BOOSTED_ACTIVATOR_RAIL",
             Material.ACTIVATOR_RAIL,
-            "&f提速激活铁轨",
+            "&fTrilho Ativador Acelerado",
             "",
-            "&7支持2.5倍速度"
+            "&7Suporta velocidade 2,5x maior",
+            "",
+            "&f𳭚"
     );
 
     public static final SlimefunItemStack BOOSTED_DETECTOR_RAIL = new SlimefunItemStack(
             "BOOSTED_DETECTOR_RAIL",
             Material.DETECTOR_RAIL,
-            "&f提速探测铁轨",
+            "&fTrilho Detector Acelerado",
             "",
-            "&7支持2.5倍速度"
+            "&7Suporta velocidade 2,5x maior",
+            "",
+            "&f𳭚"
     );
 
     public static final SlimefunItemStack BOOSTED_POWERED_RAIL = new SlimefunItemStack(
             "BOOSTED_POWERED_RAIL",
             Material.POWERED_RAIL,
-            "&f提速充能铁轨",
+            "&fTrilho Propulsor Acelerado",
             "",
-            "&7支持2.5倍速度"
+            "&7Suporta velocidade 2,5x maior",
+            "",
+            "&f𳭚"
     );
 
     public static final SlimefunItemStack BERRY_BUSH_TRIMMER = new SlimefunItemStack(
             "BERRY_BUSH_TRIMMER",
             Material.SHEARS,
-            "&e甜浆果丛修剪器",
+            "&eTesoura de Arbustos de Frutinhas",
             "",
-            "&7清除甜浆果丛上的刺"
+            "&7Remove os espinhos do arbusto de frutinhas",
+            "",
+            "&f𳭚"
     );
 
     public static final SlimefunItemStack FORCEFIELD_DOME = new SlimefunItemStack(
             "FORCEFIELD_DOME",
             Material.OBSERVER,
-            "&4穹顶力场",
+            "&4Cúpula de Campo de Força",
             "",
-            "&7通电后,在周围32格半径范围",
-            "&7生成保护屏障.",
-            "&7电力不足或被破坏后屏障消失",
+            "&7Ao ser energizada, gera uma barreira",
+            "&7protetora em um raio de 32 blocos ao redor.",
+            "&7A barreira desaparece se faltar energia",
+            "&7ou se o bloco for destruído",
             "",
             MachineLore.energyPerSecond(ForcefieldDome.ENERGY_CONSUMPTION)
     );
@@ -258,174 +277,215 @@ public final class Items{
     public static final SlimefunItemStack REMOTE_CONTROLLER = new SlimefunItemStack(
             "REMOTE_CONTROLLER",
             Material.NAME_TAG,
-            "&c远程控制器",
+            "&cControle Remoto",
             "",
-            "&7允许你远程控制穹顶力场",
-            "&eShift + 右键点击 &7以绑定穹顶力场",
+            "&7Permite controlar a Cúpula de Campo",
+            "&7de Força remotamente",
+            "&eShift + Clique direito &7para vincular a Cúpula de Campo de Força",
             "",
-            "&c&o&8\u21E8 &e\u26A1 &70 / 1000 J"
+            "&c&o&8⇨ &e⚡ &70 / 1000 J",
+            "",
+            "&f𳭚"
     );
 
     public static final SlimefunItemStack FORCEFIELD_ENGINE = new SlimefunItemStack(
             "FORCEFIELD_ENGINE",
             Material.STRUCTURE_BLOCK,
-            "&f力场引擎"
+            "&fMotor de Campo de Força",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack FORCEFIELD_STABILIZER = new SlimefunItemStack(
             "FORCEFIELD_STABILIZER",
             Material.STRUCTURE_VOID,
-            "&f力场稳定器"
+            "&fEstabilizador de Campo de Força",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack WIRELESS_TRANSMITTER = new SlimefunItemStack(
             "WIRELESS_TRANSMITTER",
             Material.REPEATER,
-            "&f无线发射器"
+            "&fTransmissor Sem Fio",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack DEMONIC_INGOT = new SlimefunItemStack(
             "DEMONIC_INGOT",
             Material.GOLD_INGOT,
-            "&c恶魔锭"
+            "&cLingote Demoníaco",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack DEMONIC_PLATE = new SlimefunItemStack(
             "DEMONIC_PLATE",
             Material.LIGHT_WEIGHTED_PRESSURE_PLATE,
-            "&c恶魔板"
+            "&cPlaca Demoníaca",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack AQUATIC_NETHERITE_INGOT = new SlimefunItemStack(
             "AQUATIC_NETHERITE_INGOT",
             Material.NETHERITE_INGOT,
-            "&b水生下界合金锭"
+            "&bLingote de Netherite Aquático",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack DAMIENIUM = new SlimefunItemStack(
             "DAMIENIUM",
             Material.GOLD_INGOT,
-            "&a达米恩锭"
+            "&aLingote de Damiênio",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack SWEET_INGOT = new SlimefunItemStack(
             "SWEET_INGOT",
             Material.GOLD_INGOT,
-            "&e甜蜜锭"
+            "&eLingote Doce",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack SWEETENED_SWEET_INGOT = new SlimefunItemStack(
             "SWEETENED_SWEET_INGOT",
             Material.GOLD_INGOT,
-            "&e加糖的甜蜜锭"
+            "&eLingote Doce Açucarado",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack SACRIFICIAL_ALTAR_BLACKSTONE_BRICKS = new SlimefunItemStack(
             "SACRIFICIAL_ALTAR_BLACKSTONE_BRICKS",
             Material.POLISHED_BLACKSTONE_BRICKS,
-            "&f献祭黑石砖",
+            "&fTijolos de Blackstone Sacrificial",
             "",
-            "&7用于建造献祭祭坛",
+            "&7Usado para construir o Altar de Sacrifício",
             "",
-            "&7使用&9/foxy altar&7查看视频建造教程"
+            "&7Use &9/foxy altar &7para ver o tutorial em vídeo de construção"
     );
 
     public static final SlimefunItemStack SACRIFICIAL_ALTAR_BLACKSTONE_BRICK_WALL = new SlimefunItemStack(
             "SACRIFICIAL_ALTAR_BLACKSTONE_BRICK_WALL",
             Material.POLISHED_BLACKSTONE_BRICK_WALL,
-            "&f献祭黑石砖墙",
+            "&fMuro de Tijolos de Blackstone Sacrificial",
             "",
-            "&7用于建造献祭祭坛",
+            "&7Usado para construir o Altar de Sacrifício",
             "",
-            "&7使用&9/foxy altar&7查看视频建造教程"
+            "&7Use &9/foxy altar &7para ver o tutorial em vídeo de construção"
     );
 
     public static final SlimefunItemStack SACRIFICIAL_ALTAR_BLACKSTONE_BRICK_STAIRS = new SlimefunItemStack(
             "SACRIFICIAL_ALTAR_BLACKSTONE_BRICK_STAIRS",
             Material.POLISHED_BLACKSTONE_BRICK_STAIRS,
-            "&f献祭黑石砖楼梯",
+            "&fEscada de Tijolos de Blackstone Sacrificial",
             "",
-            "&7用于建造献祭祭坛",
+            "&7Usado para construir o Altar de Sacrifício",
             "",
-            "&7使用&9/foxy altar&7查看视频建造教程"
+            "&7Use &9/foxy altar &7para ver o tutorial em vídeo de construção"
     );
 
     public static final SlimefunItemStack SACRIFICIAL_ALTAR_SOUL_TORCH = new SlimefunItemStack(
             "SACRIFICIAL_ALTAR_SOUL_TORCH",
             Material.SOUL_TORCH,
-            "&f献祭灵魂火把",
+            "&fTocha de Alma Sacrificial",
             "",
-            "&7用于建造献祭祭坛",
+            "&7Usado para construir o Altar de Sacrifício",
             "",
-            "&7使用&9/foxy altar&7查看视频建造教程"
+            "&7Use &9/foxy altar &7para ver o tutorial em vídeo de construção"
     );
 
     public static final SlimefunItemStack SACRIFICIAL_ALTAR_BLACKSTONE_PRESSURE_PLATE = new SlimefunItemStack(
             "SACRIFICIAL_ALTAR_BLACKSTONE_PRESSURE_PLATE",
             Material.POLISHED_BLACKSTONE_PRESSURE_PLATE,
-            "&f献祭席",
+            "&fPlaca de Sacrifício",
             "",
-            "&7用于建造献祭祭坛",
-            "&7结构搭建完成后右键点击以激活",
+            "&7Usado para construir o Altar de Sacrifício",
+            "&7Após concluir a estrutura, clique direito para ativar",
             "",
-            "&7使用&9/foxy altar&7查看视频建造教程"
+            "&7Use &9/foxy altar &7para ver o tutorial em vídeo de construção",
+            "",
+            "&f𳭚"
     );
 
     public static final SlimefunItemStack CURSED_RABBIT_PAW = new SlimefunItemStack(
             "CURSED_RABBIT_PAW",
             Material.RABBIT_FOOT,
-            "&c诅咒兔爪"
+            "&cPata de Coelho Amaldiçoada",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack HUMAN_SKULL = new SlimefunItemStack(
             "HUMAN_SKULL",
             Material.SKELETON_SKULL,
-            "&c人类头颅"
+            "&cCrânio Humano",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack BLOOD_INFUSED_SKULL = new SlimefunItemStack(
             "BLOOD_INFUSED_SKULL",
             "daa4e2294df370b9a50cb924cdda78f740b0fbaf5a687106178505c80a79addc",
-            "&c注血头颅"
+            "&cCrânio Infundido com Sangue",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack BLOOD = new SlimefunItemStack(
             "BLOOD",
             Material.REDSTONE,
-            "&c鲜血"
+            "&cSangue",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack UNHOLY_WITHER_SKELETON_BONE = new SlimefunItemStack(
             "UNHOLY_WITHER_SKELETON_BONE",
             Material.BONE,
-            "&c邪恶凋零骷髅骨"
+            "&cOsso Profano de Esqueleto Wither",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack PURIFIED_BONE = new SlimefunItemStack(
             "PURIFIED_BONE",
             Material.BONE,
-            "&b纯净骨头"
+            "&bOsso Purificado",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack PURE_BONE_DUST = new SlimefunItemStack(
             "PURE_BONE_DUST",
             Material.BONE_MEAL,
-            "&b纯净骨粉"
+            "&bPó de Osso Puro",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack BUCKET_OF_BLOOD = new SlimefunItemStack(
             "BUCKET_OF_BLOOD",
             Material.LAVA_BUCKET,
-            "&c鲜血之桶"
+            "&cBalde de Sangue",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack POSEIDONS_FISHING_ROD = new SlimefunItemStack(
             "POSEIDONS_FISHING_ROD",
             Material.FISHING_ROD,
-            "&b波塞冬的钓竿",
-            "&7波塞冬的祝福",
+            "&bVara de Pesca de Poseidon",
+            "&7Bênção de Poseidon",
             "",
-            "&7可以获得特殊物品"
+            "&7Permite obter itens especiais",
+            "",
+            "&f𳭚"
     );
     static {
         POSEIDONS_FISHING_ROD.addUnsafeEnchantment(Enchantment.LUCK, 5);
@@ -435,36 +495,44 @@ public final class Items{
     public static final SlimefunItemStack POSEIDONS_BLESSING = new SlimefunItemStack(
             "POSEIDONS_BLESSING",
             Material.HEART_OF_THE_SEA,
-            "&b波塞冬的祝福"
+            "&bBênção de Poseidon",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack CURSED_SWORD = new SlimefunItemStack(
             "CURSED_SWORD",
             Material.NETHERITE_SWORD,
-            "&c诅咒之剑",
-            "&7生命偷取 I",
-            "&7护甲穿透 I",
+            "&cEspada Amaldiçoada",
+            "&7Roubo de Vida I",
+            "&7Penetração de Armadura I",
             "",
-            "&7迷惑敌人，增加伤害。",
-            "&7有可能会对攻击者产生负面影响。"
+            "&7Confunde inimigos e aumenta o dano.",
+            "&7Pode causar efeitos negativos em quem a utiliza.",
+            "",
+            "&f𳭋"
     );
 
     public static final SlimefunItemStack CELESTIAL_SWORD = new SlimefunItemStack(
             "CELESTIAL_SWORD",
             Material.NETHERITE_SWORD,
-            "&e天界之剑",
-            "&7神圣重击 II",
-            "&7护甲穿透 V"
+            "&eEspada Celestial",
+            "&7Golpe Divino II",
+            "&7Penetração de Armadura V",
+            "",
+            "&f𳭋"
     );
 
     public static final SlimefunItemStack ELUCIDATOR = new SlimefunItemStack(
             "ELUCIDATOR",
             Material.NETHERITE_SWORD,
-            "&b阐释者",
-            "&7伤害 III",
-            "&7生命偷取 II",
-            "&7护甲穿透 II",
-            "&7过量治疗"
+            "&bElucidator",
+            "&7Dano III",
+            "&7Roubo de Vida II",
+            "&7Penetração de Armadura II",
+            "&7Cura Excedente",
+            "",
+            "&f𳭊"
     );
     static {
         ELUCIDATOR.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 10);
@@ -474,22 +542,24 @@ public final class Items{
     public static final SlimefunItemStack MAGIC_LUMP_4 = new SlimefunItemStack(
             "MAGIC_LUMP_4",
             Material.GOLD_NUGGET,
-            "&6魔法结晶 &7- &eIV",
+            "&6Fragmento Mágico &7- &eIV",
             "",
-            "&c&o等级: IV");
+            "&c&oNível: IV");
 
     public static final SlimefunItemStack MAGIC_LUMP_5 = new SlimefunItemStack(
             "MAGIC_LUMP_5",
             Material.GOLD_NUGGET,
-            "&6魔法结晶 &7- &eV",
+            "&6Fragmento Mágico &7- &eV",
             "",
-            "&c&o等级: V");
+            "&c&oNível: V");
 
     public static final SlimefunItemStack AQUATIC_HELMET = new SlimefunItemStack(
             "AQUATIC_HELMET",
             Material.NETHERITE_HELMET,
-            "&b水灵头盔",
-            "&7夜视"
+            "&bElmo Aquático",
+            "&7Visão Noturna",
+            "",
+            "&f𳭉"
     );
     static {
         AQUATIC_HELMET.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
@@ -501,9 +571,11 @@ public final class Items{
     public static final SlimefunItemStack RESISTANT_CHESTPLATE = new SlimefunItemStack(
             "RESISTANT_CHESTPLATE",
             Material.NETHERITE_CHESTPLATE,
-            "&a抗性胸甲",
-            "&7抗性提升 I",
-            "&7生命恢复 I"
+            "&aPeitoral Resistente",
+            "&7Resistência I",
+            "&7Regeneração I",
+            "",
+            "&f𳭉"
     );
     static {
         RESISTANT_CHESTPLATE.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
@@ -512,9 +584,11 @@ public final class Items{
     public static final SlimefunItemStack FIERY_LEGGINGS = new SlimefunItemStack(
             "FIERY_LEGGINGS",
             Material.NETHERITE_LEGGINGS,
-            "&c火焰护腿",
-            "&7防火 I",
-            "&7火焰光环 II"
+            "&cCalças Flamejantes",
+            "&7Resistência ao Fogo I",
+            "&7Aura de Fogo II",
+            "",
+            "&f𳭉"
     );
     static {
         FIERY_LEGGINGS.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
@@ -524,9 +598,11 @@ public final class Items{
     public static final SlimefunItemStack LIGHT_BOOTS = new SlimefunItemStack(
             "LIGHT_BOOTS",
             Material.NETHERITE_BOOTS,
-            "&e轻盈之靴",
-            "&7跳跃提升 II",
-            "&7速度 II"
+            "&eBotas Leves",
+            "&7Salto Elevado II",
+            "&7Velocidade II",
+            "",
+            "&f𳭉"
     );
     static {
         LIGHT_BOOTS.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
@@ -537,139 +613,175 @@ public final class Items{
     public static final SlimefunItemStack AQUATIC_HELMET_FRAME = new SlimefunItemStack(
             "HELMET_FRAME",
             Material.CHAINMAIL_HELMET,
-            "&f水灵头盔框架",
+            "&fArmação do Elmo Aquático",
             "",
-            "&7合成材料"
+            "&7Material de fabricação",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack RESISTANT_CHESTPLATE_FRAME = new SlimefunItemStack(
             "RESISTANT_CHESTPLATE_FRAME",
             Material.CHAINMAIL_CHESTPLATE,
-            "&f抗性胸甲框架",
+            "&fArmação do Peitoral Resistente",
             "",
-            "&7合成材料"
+            "&7Material de fabricação",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack FIERY_LEGGINGS_FRAME = new SlimefunItemStack(
             "FIERY_LEGGINGS_FRAME",
             Material.CHAINMAIL_LEGGINGS,
-            "&f火焰护腿框架",
+            "&fArmação das Calças Flamejantes",
             "",
-            "&7合成材料"
+            "&7Material de fabricação",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack LIGHT_BOOTS_FRAME = new SlimefunItemStack(
             "LIGHT_BOOTS_FRAME",
             Material.CHAINMAIL_BOOTS,
-            "&f轻盈之靴框架",
+            "&fArmação das Botas Leves",
             "",
-            "&7合成材料"
+            "&7Material de fabricação",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack CURSED_SHARD = new SlimefunItemStack(
             "CURSED_SHARD",
             Material.NETHERITE_SCRAP,
-            "&c诅咒碎片",
+            "&cFragmento Amaldiçoado",
             "",
-            "&7合成材料",
-            "&7将该物品投掷到献祭祭坛中可重置任务..."
+            "&7Material de fabricação",
+            "&7Jogue este item no Altar de Sacrifício para reiniciar a missão...",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack CELESTIAL_SHARD = new SlimefunItemStack(
             "CELESTIAL_SHARD",
             Material.PRISMARINE_SHARD,
-            "&e天界碎片",
+            "&eFragmento Celestial",
             "",
-            "&7合成材料",
-            "&7将该物品投掷到献祭祭坛中可重置任务..."
+            "&7Material de fabricação",
+            "&7Jogue este item no Altar de Sacrifício para reiniciar a missão...",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack EQUANIMOUS_GEM = new SlimefunItemStack(
             "EQUANIMOUS_GEM",
             Material.EMERALD,
-            "&a镇静宝石"
+            "&aGema da Equanimidade",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack POLAR_FOX_HIDE = new SlimefunItemStack(
             "POLAR_FOX_HIDE",
             Material.SNOWBALL,
-            "&f北极狐皮"
+            "&fPele de Raposa Polar",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack MAGMA_ESSENCE = new SlimefunItemStack(
             "MAGMA_ESSENCE",
             Material.MAGMA_CREAM,
-            "&c岩浆精华"
+            "&cEssência de Magma",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack TROPICAL_FISH_SCALE = new SlimefunItemStack(
             "TROPICAL_FISH_SCALE",
             Material.TROPICAL_FISH_SPAWN_EGG,
-            "&b热带鱼鳞"
+            "&bEscama de Peixe Tropical",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack PARROT_FEATHER = new SlimefunItemStack(
             "PARROT_FEATHER",
             Material.FEATHER,
-            "&a鹦鹉羽毛"
+            "&aPena de Papagaio",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack UNBREAKABLE_RUNE = new SlimefunItemStack(
             "UNBREAKABLE_RUNE",
             new ColoredFireworkStar(
                     Color.fromRGB(0, 188, 0),
-                    "&7古代符文 &8&l[&2&l无法破坏&8&l]",
+                    "&7Runa Ancestral &8&l[&2&lInquebrável&8&l]",
                     "",
-                    "&e将需要绑定的物品丢在地上",
-                    "&e然后将此符文丢向该物品",
-                    "&e即可让该物品&2无法破坏"
+                    "&eJogue no chão o item que deseja vincular",
+                    "&ee então jogue esta runa em direção ao item",
+                    "&epara torná-lo &2inquebrável"
             ));
 
     public static final SlimefunItemStack PIXIE_QUEEN_SPAWN_EGG = new SlimefunItemStack(
             "PIXIE_QUEEN_SPAWN_EGG",
             Material.CREEPER_SPAWN_EGG,
-            "&a精灵女王&f刷怪蛋"
+            "&aOvo de Geração da &fRainha Fada",
+            "",
+            "&f𳭚"
     );
 
     public static final SlimefunItemStack HEADLESS_HORSEMAN_SPAWN_EGG = new SlimefunItemStack(
             "HEADLESS_HORSEMAN_SPAWN_EGG",
             Material.SPIDER_SPAWN_EGG,
-            "&c无头骑士&f刷怪蛋"
+            "&cOvo de Geração do &fCavaleiro sem Cabeça",
+            "",
+            "&f𳭚"
     );
 
     public static final SlimefunItemStack PIXIE_QUEEN_HEART = new SlimefunItemStack(
             "PIXIE_QUEEN_HEART",
             Material.FERMENTED_SPIDER_EYE,
-            "&4精灵女王之心"
+            "&4Coração da Rainha Fada",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack PIXIE_DUST = new SlimefunItemStack(
             "PIXIE_DUST",
             Material.SUGAR,
-            "&e精灵之粉",
+            "&ePó de Fada",
             "",
-            "&7力量 IV"
+            "&7Força IV",
+            "",
+            "&f𳭚"
     );
 
     public static final SlimefunItemStack VILE_PUMPKIN = new SlimefunItemStack(
             "VILE_PUMPKIN",
             Material.CARVED_PUMPKIN,
-            "&c邪恶南瓜"
+            "&cAbóbora Vil",
+            "",
+            "&f𳭙"
     );
 
     public static final SlimefunItemStack VILE_SEEDS = new SlimefunItemStack(
             "VILE_SEEDS",
             Material.MELON_SEEDS,
-            "&c邪恶之种",
+            "&cSementes Vis",
             "",
-            "&7生命提升 V"
+            "&7Aumento de Vida V",
+            "",
+            "&f𳭚"
     );
 
     public static final SlimefunItemStack ACRI_ARCUM = new SlimefunItemStack(
             "ACRI_ARCUM",
             Material.BOW,
-            "&e锋利之弓",
-            "&7护甲穿透 II"
+            "&eArco Afiado",
+            "&7Penetração de Armadura II",
+            "",
+            "&f𳭉"
     );
     static {
         ACRI_ARCUM.addUnsafeEnchantment(Enchantment.ARROW_DAMAGE, 7);
@@ -679,58 +791,71 @@ public final class Items{
     public static final SlimefunItemStack GHOST_BLOCK_REMOVER = new SlimefunItemStack(
             "GHOST_BLOCK_REMOVER",
             Material.CLOCK,
-            "&e幽灵方块移除器",
+            "&eRemovedor de Blocos Fantasmas",
             "",
-            "&e右键点击&7移除幽灵方块"
+            "&eClique direito &7para remover um bloco fantasma",
+            "",
+            "&f𳭚"
     );
 
     public static final SlimefunItemStack POSITION_SELECTOR = new SlimefunItemStack(
             "POSITION_SELECTOR",
             Material.STICK,
-            "&e位置选择器",
+            "&eSeletor de Posição",
             "",
-            "&e左键点击&7方块选择第一个位置",
-            "&e右键点击&7方块选择第二个位置",
-            "&8类似于圈地的选择方式",
+            "&eClique esquerdo &7em um bloco para selecionar a primeira posição",
+            "&eClique direito &7em um bloco para selecionar a segunda posição",
+            "&8Funciona de forma parecida com uma ferramenta de seleção de área",
             "",
-            "&c&o&8\u21E8 &e\u26A1 &70 / 200 J"
+            "&c&o&8⇨ &e⚡ &70 / 200 J",
+            "",
+            "&f𳭚"
     );
 
     public static final SlimefunItemStack FILL_WAND = new SlimefunItemStack(
             "FILL_WAND",
             Material.BLAZE_ROD,
-            "&e填充棒",
+            "&eVarinha de Preenchimento",
             "",
-            "&7使用&e位置选择器&7确定两个角的位置",
-            "&eShift+右键点击&7方块以选中为材料",
-            "&e右键点击&7进行填充",
+            "&7Use o &eSeletor de Posição &7para definir os dois cantos",
+            "&eShift+Clique direito &7em um bloco para selecioná-lo como material",
+            "&eClique direito &7para preencher a área",
             "",
-            "&7材料: &e无",
-            "&c&o&8\u21E8 &e\u26A1 &70 / 1000 J"
+            "&7Material: &eNenhum",
+            "&c&o&8⇨ &e⚡ &70 / 1000 J",
+            "",
+            "&f𳭚"
     );
 
     public static final SlimefunItemStack SPONGE_WAND = new SlimefunItemStack(
             "SPONGE_WAND",
             Material.BLAZE_ROD,
-            "&e海绵棒",
+            "&eVarinha de Esponja",
             "",
-            "&7使用&e位置选择器&7确定两个角的位置",
-            "&e右键点击&7移除水和岩浆",
+            "&7Use o &eSeletor de Posição &7para definir os dois cantos",
+            "&eClique direito &7para remover água e lava",
             "",
-            "&c&o&8\u21E8 &e\u26A1 &70 / 2000 J"
+            "&c&o&8⇨ &e⚡ &70 / 2000 J",
+            "",
+            "&f𳭚"
     );
 
     public static final SlimefunItemStack NUCLEAR_SALT = new SlimefunItemStack(
             "NUCLEAR_SALT",
             Material.LIME_DYE,
-            "&a核盐",
+            "&aSal Nuclear",
             "",
-            LoreBuilder.radioactive(Radioactivity.VERY_HIGH)
+            LoreBuilder.radioactive(Radioactivity.VERY_HIGH),
+            LoreBuilder.HAZMAT_SUIT_REQUIRED,
+            "",
+            "&f𳭉"
     );
 
     public static final SlimefunItemStack COMPRESSED_SPONGE = new SlimefunItemStack(
             "COMPRESSED_SPONGE",
             Material.WET_SPONGE,
-            "&f压缩海绵"
+            "&fEsponja Comprimida",
+            "",
+            "&f𳭙"
     );
 }

@@ -53,9 +53,9 @@ public class RemoteController extends SlimefunItem implements NotPlaceable, Rech
 
                         loc.storePersistently(container);
                         itemInInventory.setItemMeta(meta);
-                        e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "穹顶力场已绑定至远程控制器");
+                        e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "Cúpula de Campo de Força vinculada ao Controle Remoto");
                     } else {
-                        e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "你必须绑定一个穹顶力场");
+                        e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "Você precisa vincular uma Cúpula de Campo de Força");
                     }
                 }
             } else {
@@ -70,13 +70,13 @@ public class RemoteController extends SlimefunItem implements NotPlaceable, Rech
                         if (removeItemCharge(item, COST)) {
                             ForcefieldDome.INSTANCE.switchActive(b, e.getPlayer());
                         } else {
-                            e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "远程控制器需要充能");
+                            e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "O Controle Remoto precisa de carga");
                         }
                     } else {
-                        e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "无法找到绑定的穹顶力场");
+                        e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "Não foi possível encontrar a Cúpula de Campo de Força vinculada");
                     }
                 } else {
-                    e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "使用 Shift + 右键点击进行绑定!");
+                    e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "Use Shift + Clique direito para vincular!");
                 }
             }
         };

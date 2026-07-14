@@ -25,30 +25,30 @@ public class QuestUtils {
 
     private static final List<EntityType> QUEST_MOBS = new ArrayList<>();
     private static final List<String> CURSED_LINES = List.of(
-            "我很想杀一个{entity}，真的很美味!",
-            "马上！我要{entity}！",
-            "你一定能帮我杀一个{entity}。",
-            "我渴望鲜血....  {entity}的鲜血。",
-            "我需要{entity}的肝脏!",
-            "我听说{entity}的血液很鲜美...",
-            "{entity}的心脏，hmmm...",
-            "我会因为{entity}肉而杀了上帝。",
-            "我可能会食用{entity}一整天。",
-            "我等待这一天很久了，是时候去击杀一个{entity}了。",
-            "{entity}血流成河！",
-            "我的诅咒将吞噬", "的灵魂!");
+            "Eu realmente quero matar um(a) {entity}, deve ser delicioso!",
+            "Agora! Eu quero um(a) {entity}!",
+            "Você certamente pode me ajudar a matar um(a) {entity}.",
+            "Eu tenho sede de sangue.... o sangue de um(a) {entity}.",
+            "Eu preciso do fígado de um(a) {entity}!",
+            "Ouvi dizer que o sangue de {entity} é uma delícia...",
+            "O coração de um(a) {entity}, hmmm...",
+            "Eu mataria um deus por carne de {entity}.",
+            "Eu poderia comer {entity} o dia inteiro.",
+            "Esperei muito por este dia, é hora de matar um(a) {entity}.",
+            "O sangue de {entity} vai correr como um rio!",
+            "Minha maldição vai devorar", "a alma dele!");
     private static final List<String> CELESTIAL_LINES = List.of(
-            "我热爱所有生命，除了{entity}，我讨厌它们!",
-            "所有必须平衡，这就是为什么我需要击杀一个{entity}。",
-            "我来自天界，但我也是一把剑。现在，给我一个{entity}。",
-            "抱歉，但现在请给我一个{entity}。不要质疑我！",
-            "天界之剑需要获得献祭，{entity}！",
-            "下一位受害者是{entity}，如上帝所愿。",
-            "接下来是... {entity}！",
-            "上帝想要{entity}死。",
-            "为了上帝和荣耀，去杀死一只{entity}。",
-            "去吧，为了正义! 杀死一只{entity}！",
-            "众星云集，我可以看到{entity}将被我的剑刃杀死。");
+            "Eu amo todas as formas de vida, exceto {entity}, eu as odeio!",
+            "Tudo deve estar em equilíbrio, por isso preciso matar um(a) {entity}.",
+            "Eu venho dos céus, mas também sou uma espada. Agora, me dê um(a) {entity}.",
+            "Desculpe, mas agora me dê um(a) {entity}. Não questione!",
+            "A Espada Celestial precisa de um sacrifício, {entity}!",
+            "A próxima vítima é {entity}, como os deuses desejam.",
+            "A seguir é... {entity}!",
+            "Os deuses querem que {entity} morra.",
+            "Pelos deuses e pela glória, vá matar um(a) {entity}.",
+            "Vá, pela justiça! Mate um(a) {entity}!",
+            "As estrelas se alinham, e vejo que {entity} será morto pela minha lâmina.");
 
 
     public static void init() {
@@ -61,7 +61,7 @@ public class QuestUtils {
             try {
                 QuestUtils.QUEST_MOBS.add(EntityType.valueOf(questMob));
             } catch (IllegalArgumentException ignored) {
-                FoxyMachines.log(Level.WARNING, "\"quest-mobs\" 包含无效的生物类型：" + questMob);
+                FoxyMachines.log(Level.WARNING, "\"quest-mobs\" contém um tipo de criatura inválido: " + questMob);
             }
         }
     }

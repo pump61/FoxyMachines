@@ -8,7 +8,6 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.libraries.commons.lang.StringUtils;
 import me.gallowsdove.foxymachines.Items;
 import me.gallowsdove.foxymachines.implementation.materials.GhostBlock;
-import net.guizhanss.guizhanlib.minecraft.helper.MaterialHelper;
 import org.bukkit.Material;
 import org.bukkit.entity.FallingBlock;
 import org.bukkit.inventory.ItemStack;
@@ -40,13 +39,26 @@ public class GhostBlockRemover extends SlimefunItem {
                 SlimefunItemStack stack = new SlimefunItemStack(
                         "GHOST_BLOCK_" + material.name().toUpperCase(),
                         material,
-                        "幽灵方块: &6" + MaterialHelper.getName(material),
+                        "Bloco Fantasma: &6" + toReadableName(material),
                         "",
-                        "&7无法触碰的方块");
+                        "&7Um bloco intocável");
 
                 block.getWorld().dropItemNaturally(block.getLocation(), stack);
                 block.remove();
             }
         };
+    }
+
+    private static String toReadableName(Material material) {
+        String[] parts = material.name().split("_");
+        StringBuilder sb = new StringBuilder();
+        for (String part : parts) {
+            if (!part.isEmpty()) {
+                sb.append(Character.toUpperCase(part.charAt(0)))
+                  .append(part.substring(1).toLowerCase())
+                  .append(' ');
+            }
+        }
+        return sb.toString().trim();
     }
 }

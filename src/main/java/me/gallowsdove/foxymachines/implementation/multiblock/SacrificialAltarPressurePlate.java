@@ -42,10 +42,10 @@ public class SacrificialAltarPressurePlate extends SlimefunItem {
                 Block b = e.getBlockPlaced();
                 if (isComplete(b)) {
                     StorageCacheUtils.setData(b.getLocation(), "complete", "true");
-                    e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "献祭祭坛已激活");
+                    e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "Altar de Sacrifício ativado");
                 } else {
                     StorageCacheUtils.setData(b.getLocation(), "complete", "false");
-                    e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "搭建完成献祭祭坛后点击献祭席来激活献祭祭坛");
+                    e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "Termine de construir o Altar de Sacrifício e clique na Placa de Sacrifício para ativá-lo");
                 }
             }
         };
@@ -57,10 +57,10 @@ public class SacrificialAltarPressurePlate extends SlimefunItem {
             if (StorageCacheUtils.getData(b.getLocation(), "complete").equals("false")) {
                 if (isComplete(b)) {
                     StorageCacheUtils.setData(b.getLocation(), "complete", "true");
-                    e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "献祭祭坛已激活");
+                    e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "Altar de Sacrifício ativado");
                 } else {
                     StorageCacheUtils.setData(b.getLocation(), "complete", "false");
-                    e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "献祭祭坛未搭建完成");
+                    e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "O Altar de Sacrifício não está completo");
                 }
             }
 
@@ -74,7 +74,7 @@ public class SacrificialAltarPressurePlate extends SlimefunItem {
             public void onPlayerBreak(@Nonnull BlockBreakEvent e, @Nonnull ItemStack item, @Nonnull List<ItemStack> drops) {
                 StorageCacheUtils.removeData(e.getBlock().getLocation(), "complete");
                 Slimefun.getDatabaseManager().getBlockDataController().removeBlock(e.getBlock().getLocation());
-                e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "献祭祭坛已损坏");
+                e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "O Altar de Sacrifício foi danificado");
             }
         };
     }

@@ -64,7 +64,7 @@ public class GhostBlock extends SlimefunItem {
             Block b = e.getClickedBlock().get().getRelative(e.getClickedFace());
 
             if (!Slimefun.getProtectionManager().hasPermission(p, b, Interaction.PLACE_BLOCK)) {
-                p.sendMessage(ChatColor.LIGHT_PURPLE + "你没有在此放置方块的权限！");
+                p.sendMessage(ChatColor.LIGHT_PURPLE + "Você não tem permissão para colocar blocos aqui!");
                 return;
             }
 

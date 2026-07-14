@@ -123,24 +123,24 @@ public final class ForcefieldDome extends SlimefunItem implements EnergyNetCompo
                     if (active.equals("false")) {
                         if (getCharge(b.getLocation()) >= ENERGY_CONSUMPTION) {
                             setDomeActive(b);
-                            e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "已激活穹顶力场");
+                            e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "Cúpula de Campo de Força ativada");
 
                             StorageCacheUtils.setData(b.getLocation(), "cooldown", "true");
                             Scheduler.runAsync(200, () ->
                                     StorageCacheUtils.setData(b.getLocation(), "cooldown", "false"));
                         } else {
-                            e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "电力不足");
+                            e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "Energia insuficiente");
                         }
                     } else {
                         setDomeInactive(b);
-                        e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "已关闭穹顶力场");
+                        e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "Cúpula de Campo de Força desativada");
 
                         StorageCacheUtils.setData(b.getLocation(), "cooldown", "true");
                         Scheduler.runAsync(200, () ->
                                 StorageCacheUtils.setData(b.getLocation(), "cooldown", "false"));
                     }
                 } else {
-                    e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "你必须等待至少10秒才能再次激活穹顶力场");
+                    e.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "Você precisa esperar pelo menos 10 segundos para ativar a Cúpula de Campo de Força novamente");
                 }
                 e.cancel();
             }
@@ -196,24 +196,24 @@ public final class ForcefieldDome extends SlimefunItem implements EnergyNetCompo
             if (active.equals("false")) {
                 if (getCharge(b.getLocation()) >= ENERGY_CONSUMPTION) {
                     setDomeActive(b);
-                    p.sendMessage(ChatColor.LIGHT_PURPLE + "穹顶力场已激活.");
+                    p.sendMessage(ChatColor.LIGHT_PURPLE + "Cúpula de Campo de Força ativada.");
 
                     StorageCacheUtils.setData(b.getLocation(), "cooldown", "true");
                     Scheduler.runAsync(200, () ->
                             StorageCacheUtils.setData(b.getLocation(), "cooldown", "false"));
                 } else {
-                    p.sendMessage(ChatColor.LIGHT_PURPLE + "电力不足");
+                    p.sendMessage(ChatColor.LIGHT_PURPLE + "Energia insuficiente");
                 }
             } else {
                 setDomeInactive(b);
-                p.sendMessage(ChatColor.LIGHT_PURPLE + "穹顶力场已关闭");
+                p.sendMessage(ChatColor.LIGHT_PURPLE + "Cúpula de Campo de Força desativada");
 
                 StorageCacheUtils.setData(b.getLocation(), "cooldown", "true");
                 Scheduler.runAsync(200, () ->
                         StorageCacheUtils.setData(b.getLocation(), "cooldown", "false"));
             }
         } else {
-            p.sendMessage(ChatColor.LIGHT_PURPLE + "你必须等待至少10秒才能再次启用穹顶力场");
+            p.sendMessage(ChatColor.LIGHT_PURPLE + "Você precisa esperar pelo menos 10 segundos para ativar a Cúpula de Campo de Força novamente");
         }
     }
 
