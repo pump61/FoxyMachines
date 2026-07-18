@@ -77,7 +77,12 @@ public class ElectricGoldRefinery extends SlimefunItem implements EnergyNetCompo
                     });
                 }
 
-                if (!StorageCacheUtils.hasBlock(b.getLocation()) ||
+                // The block's data container can still be loading asynchronously at this point,
+                // in which case getData() would throw instead of returning null.
+                var container = StorageCacheUtils.getDataContainer(b.getLocation());
+                boolean dataLoaded = container != null && container.isDataLoaded();
+
+                if (!dataLoaded || !StorageCacheUtils.hasBlock(b.getLocation()) ||
                         StorageCacheUtils.getData(b.getLocation(), "gold_recipe") == null ||
                         StorageCacheUtils.getData(b.getLocation(), "gold_recipe").equals("11")) {
                     menu.replaceExistingItem(32, new CustomItemStack(Material.RED_STAINED_GLASS_PANE, "&6Receita atual: &cNenhuma", "", "&e> Clique no item à esquerda para mudar a receita"));
