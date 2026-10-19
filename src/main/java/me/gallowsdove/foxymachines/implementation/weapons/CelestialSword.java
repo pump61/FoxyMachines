@@ -33,7 +33,7 @@ public class CelestialSword extends OnHitWeapon {
         ThreadLocalRandom random = ThreadLocalRandom.current();
         if (random.nextInt(100) < 15) {
             entity.getWorld().strikeLightningEffect(entity.getLocation());
-            entity.damage(8);
+            Utils.damageNextTick(entity, 8);
         }
 
         entity.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, 80, 0, false, false));

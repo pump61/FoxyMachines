@@ -6,7 +6,7 @@
 
     <groupId>me.gallowsdove</groupId>
     <artifactId>FoxyMachines</artifactId>
-    <version>MODIFIED</version>
+    <version>MODIFIED-2026.10.19</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

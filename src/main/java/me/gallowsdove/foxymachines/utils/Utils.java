@@ -1,5 +1,6 @@
 package me.gallowsdove.foxymachines.utils;
 
+import me.gallowsdove.foxymachines.FoxyMachines;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -22,25 +23,41 @@ public class Utils {
         return Bukkit.getPluginManager().isPluginEnabled("AuraSkills");
     }
 
+    /**
+     * Applies true damage one tick later. Almost every caller runs inside an EntityDamageEvent:
+     * killing the entity there (setHealth(0)) and then letting the event's own damage apply made
+     * players die twice (two death messages, two PlayerDeathEvents). Deferring lets the hit
+     * resolve first; if it already killed, the extra damage is simply skipped.
+     */
     public static void dealDamageBypassingArmor(LivingEntity entity, double damage) {
-        if (damage >= 0) {
-            if (entity.getAbsorptionAmount() >= 0) {
-                if (entity.getAbsorptionAmount() - damage > 0) {
-                    entity.setAbsorptionAmount(entity.getAbsorptionAmount() - damage);
-                    damage = 0;
-                } else {
-                    entity.setAbsorptionAmount(0);
-                    damage = damage - entity.getAbsorptionAmount();
-                }
-            }
-            if (damage > 0) {
-                if (entity.getHealth() - damage >= 0) {
-                    entity.setHealth(entity.getHealth() - damage);
-                } else {
-                    entity.setHealth(0);
-                }
-            }
+        if (damage <= 0) {
+            return;
         }
+        runNextTickIfAlive(entity, () -> {
+            double remaining = damage;
+            double absorption = entity.getAbsorptionAmount();
+            if (absorption > 0) {
+                double absorbed = Math.min(absorption, remaining);
+                entity.setAbsorptionAmount(absorption - absorbed);
+                remaining -= absorbed;
+            }
+            if (remaining > 0) {
+                entity.setHealth(Math.max(0, entity.getHealth() - remaining));
+            }
+        });
+    }
+
+    /** Same deferral as {@link #dealDamageBypassingArmor}, for extra hits dealt from inside a damage event. */
+    public static void damageNextTick(LivingEntity entity, double damage) {
+        runNextTickIfAlive(entity, () -> entity.damage(damage));
+    }
+
+    private static void runNextTickIfAlive(LivingEntity entity, Runnable action) {
+        Bukkit.getScheduler().runTask(FoxyMachines.getInstance(), () -> {
+            if (entity.isValid() && !entity.isDead()) {
+                action.run();
+            }
+        });
     }
 
     public static int countItemInInventory(@Nonnull Inventory inventory, @Nonnull ItemStack itemStack) {
